@@ -8,7 +8,7 @@ from botocore.exceptions import BotoCoreError, ClientError
 from telegram.request import HTTPXRequest
 
 # Token para conexão do bot do Telegram
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "7761170745:AAF5asRbfqhx8WShdJgQa2gyuRDOP6HSbM0")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "COLOQUE SEU TOKEM AQUI")
 if not TELEGRAM_TOKEN:
     raise ValueError("O token do Telegram não está configurado.")
 
