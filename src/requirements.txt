@@ -1,0 +1,11 @@
+boto3
+langchain
+langchain-community
+langchain-aws
+pypdf2
+pypdf
+chromadb
+telegram
+python-telegram-bot
+langchain_chroma
+httpx

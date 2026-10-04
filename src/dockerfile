@@ -1,0 +1,25 @@
+# Use uma imagem base especificando a arquitetura (x86_64 ou arm64)
+FROM  public.ecr.aws/lambda/python:3.12
+
+# Define o diretório de trabalho dentro do container
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+# Copia o arquivo Python para o diretório de trabalho no container
+COPY lambda_function.py ${LAMBDA_TASK_ROOT}
+
+# Copia o arquivo de requerimentos 
+COPY requirements.txt .
+COPY __init__.py .
+COPY custom_langchain.py .
+
+RUN mkdir -p chroma 
+
+RUN ls -l ${LAMBDA_TASK_ROOT}
+
+# Instala as dependências, se necessário
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+
+
+# Set the CMD to your handler
+CMD [ "lambda_function.handler" ]
